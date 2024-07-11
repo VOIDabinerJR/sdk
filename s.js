@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Estilos básicos do botão
     button.style.display = 'inline-block';
-    button.style.backgroundColor = '#0070ba';
+    button.style.backgroundColor = '#0a0a0a';
     button.style.color = 'white';
     button.style.fontSize = '16px';
     button.style.padding = '10px 20px';
