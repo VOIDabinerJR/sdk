@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('.void-pay-button');
+    const container = document.getElementById('void-button-container');
     
     // Criando o botão
     const button = document.createElement('a');
