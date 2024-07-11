@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('#void-button-container'); // Selecionando o container correto
 
     // Criando o botão
-    const button = document.createElement('a');
-    button.href = 'https://voidpay.com/pay';
+    const button = document.createElement('button');
     button.id = 'void-pay-button';
+    button.type = 'submit';
 
     // Criando a imagem do ícone
     const icon = document.createElement('img');
@@ -13,12 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
     icon.style.verticalAlign = 'middle'; // Ajustando o alinhamento vertical do ícone
 
     // Texto do botão
-    const buttonText = document.createTextNode('pagar');
+    const buttonText = document.createTextNode('Pagar');
 
     // Adicionando o ícone e o texto ao botão
     button.appendChild(buttonText);
     button.appendChild(icon);
-   
 
     // Estilos básicos do botão
     button.style.display = 'inline-block';
@@ -59,34 +58,41 @@ document.addEventListener('DOMContentLoaded', function () {
         button.style.transform = 'translateY(0)';
     });
 
+    button.addEventListener('click', async function (event) {
+        event.preventDefault(); // Previne o comportamento padrão do botão
+        async function sendOrder() {
+            const aa = document.getElementById('product-id').value
+            const bb = document.getElementById('quantity').value
+            const data = {
+                id: aa,
+                price: bb,
+                description: "1234567890"
+            };
+            try {
+                const response = await fetch('http://localhost:3000/saveOrder', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                // Exibir a resposta como texto
+                const result = await response.text();
+                document.body.innerHTML = result;
+            } catch (error) {
+                console.error('There was a problem with the fetch operation:', error);
+            }
+        }
+        sendOrder()
+
+    
+    });
+
     // Adicionando o botão ao container
     container.appendChild(button);
-    const form = document.querySelector('#product-form');
-    form.addEventListener('submit', async function (event) {
-        event.preventDefault(); // Previne o comportamento padrão do formulário
-
-        const productId = document.querySelector('#product-id').value;
-        const quantity = document.querySelector('#quantity').value;
-
-        try {
-            const response = await fetch('http://localhost:3000/order', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ productId, quantity })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                // Redireciona para a página com o formulário preenchido
-                window.location.href = `/order?productId=${data.productId}&quantity=${data.quantity}`;
-            } else {
-                console.error('Server error:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Error processing order:', error);
-        }
-    });
 });
-
