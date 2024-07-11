@@ -1,11 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const container = document.querySelector('#void-button-container'); // Corrected selector
+    const container = document.querySelector('#void-button-container'); // Selecionando o container correto
 
     // Criando o botão
     const button = document.createElement('a');
     button.href = 'https://voidpay.com/pay';
     button.id = 'void-pay-button';
-    button.textContent = 'VoidPay';
+
+    // Criando a imagem do ícone
+    const icon = document.createElement('img');
+    icon.src = 'void.jpg'; // Substitua pelo caminho do seu ícone
+    icon.alt = 'Ícone do Void Pay';
+    icon.style.verticalAlign = 'middle'; // Ajustando o alinhamento vertical do ícone
+
+    // Texto do botão
+    const buttonText = document.createTextNode(' Pagar com Void Pay');
+
+    // Adicionando o ícone e o texto ao botão
+    button.appendChild(icon);
+    button.appendChild(buttonText);
 
     // Estilos básicos do botão
     button.style.display = 'inline-block';
