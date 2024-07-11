@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     button.style.display = 'inline-block';
     button.style.backgroundColor = '#0a0a0a';
     button.style.color = 'white';
-    button.style.fontSize = '30px';
+    button.style.fontSize = '18px';
     button.style.padding = '10px 20px';
     button.style.border = 'none';
     button.style.borderRadius = '5px';
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Estilos ao focar o botão pelo cursor
     button.addEventListener('mouseenter', function () {
-        button.style.backgroundColor = '#005fa3';
+        button.style.backgroundColor = '#0a0a0a';
         button.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.4)';
     });
 
@@ -61,4 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Adicionando o botão ao container
     container.appendChild(button);
+    const pay = pay()
 });
+
