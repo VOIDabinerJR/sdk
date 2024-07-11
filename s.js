@@ -16,8 +16,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const buttonText = document.createTextNode('pagar');
 
     // Adicionando o ícone e o texto ao botão
-    button.appendChild(icon);
     button.appendChild(buttonText);
+    button.appendChild(icon);
+   
 
     // Estilos básicos do botão
     button.style.display = 'inline-block';
@@ -35,25 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // Estilos ao focar o botão pelo cursor
     button.addEventListener('mouseenter', function () {
         button.style.backgroundColor = '#005fa3';
-        button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+        button.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.4)';
     });
 
     // Removendo estilos ao desfocar o botão pelo cursor
     button.addEventListener('mouseleave', function () {
-        button.style.backgroundColor = '#0070ba';
+        button.style.backgroundColor = '#0a0a0a';
         button.style.boxShadow = 'none';
     });
 
     // Estilos ao clicar no botão
     button.addEventListener('mousedown', function () {
-        button.style.backgroundColor = '#004080';
+        button.style.backgroundColor = '#0a0a0a';
         button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
         button.style.transform = 'translateY(2px)';
     });
 
     // Estilos ao soltar o clique no botão
     button.addEventListener('mouseup', function () {
-        button.style.backgroundColor = '#005fa3';
+        button.style.backgroundColor = '#0a0a0a';
         button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
         button.style.transform = 'translateY(0)';
     });
