@@ -17,8 +17,29 @@ app.set('views', path.join(__dirname, 'views'));
 app.post('/order', (req, res) => {
     const { productId, quantity } = req.body;
 
-    // Renderizando a página com os dados do pedido e um campo para o nome do celular
+    // Envia uma resposta JSON com os dados do pedido
+    res.json({ productId, quantity });
+});
+
+// Rota para renderizar o formulário preenchido
+app.get('/order', (req, res) => {
+    const { productId, quantity } = req.query;
+
+    // Renderiza a página com os dados do pedido e um campo para o nome do celular
     res.render('order', { productId, quantity });
+});
+
+// Rota para receber a submissão do formulário preenchido
+app.post('/submit-order', (req, res) => {
+    const { productId, quantity, 'cellphone-name': cellphoneName } = req.body;
+
+    // Lógica para processar o pedido (pode ser armazenar no banco de dados, etc.)
+    console.log('Order received:');
+    console.log(`Product ID: ${productId}`);
+    console.log(`Quantity: ${quantity}`);
+    console.log(`Cellphone Name: ${cellphoneName}`);
+
+    res.send('Order received successfully!');
 });
 
 // Servindo arquivos estáticos (caso necessário)
