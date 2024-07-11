@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     icon.style.verticalAlign = 'middle'; // Ajustando o alinhamento vertical do ícone
 
     // Texto do botão
-    const buttonText = document.createTextNode(' Pagar com Void Pay');
+    const buttonText = document.createTextNode(' ');
 
     // Adicionando o ícone e o texto ao botão
     button.appendChild(icon);
