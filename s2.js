@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('#void-button-container'); // Selecionando o container correto
-
+console.log("ooi")
     // Criando o botão
     const button = document.createElement('button');
     button.id = 'void-pay-button';
@@ -63,9 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
         async function sendOrder() {
             const aa = document.getElementById('product-id').value
             const bb = document.getElementById('quantity').value
+            const cc = document.getElementById('buttonid').getAttribute('name')
             const data = {
-                id: aa,
-                price: bb,
+                buttonId: cc,
+                productId: aa,
+                quantity: bb,
                 description: "1234567890"
             };
             try {

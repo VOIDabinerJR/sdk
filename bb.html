@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="product-id">Product ID:</label>
+    <input type="text" id="product-id" name="product-id" required>
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required>
+    <div id="void-button-container"></div>
+    <div id="buttonid" name="321d"></div>
+
+    <div id="void-script-container"></div>
+<script src="s2.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.querySelector('#void-script-container');
+
+            const script = document.createElement('script');
+            script.src = 's2.js';
+          console.log('Script s2.js carregado com sucesso!');
+
+            // Função para garantir que o script seja executado após o carregamento
+            script.onload = function () {
+                console.log('Script s2.js carregado com sucesso!');
+                // Aqui você pode adicionar lógica adicional que depende do script estar carregado
+            };
+
+            container.appendChild(script);
+        });
+    </script>
+
+</body>
+
+</html>
