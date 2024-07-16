@@ -63,7 +63,7 @@ console.log("ooi")
         async function sendOrder() {
             const aa = document.getElementById('product-id').value
             const bb = document.getElementById('quantity').value
-            const cc = document.getElementById('buttonid').getAttribute('name')
+            const cc = document.getElementById('void-button-container').getAttribute('name')
             const data = {
                 buttonId: cc,
                 productId: aa,
