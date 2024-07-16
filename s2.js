@@ -8,7 +8,7 @@ console.log("ooi")
 
     // Criando a imagem do ícone
     const icon = document.createElement('img');
-    icon.src = 'void.jpg'; // Substitua pelo caminho do seu ícone
+    icon.src = 'https://raw.githubusercontent.com/VOIDabinerJR/sdk/main/void.jpg'; // Substitua pelo caminho do seu ícone
     icon.alt = 'Ícone do Void Pay';
     icon.style.verticalAlign = 'middle'; // Ajustando o alinhamento vertical do ícone
 
